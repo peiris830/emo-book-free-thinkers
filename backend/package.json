@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "cd ../frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tharusha Peiris",
@@ -16,6 +17,7 @@
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
   }
 }
