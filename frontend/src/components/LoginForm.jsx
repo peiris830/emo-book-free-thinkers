@@ -8,7 +8,7 @@ function LoginForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:3001/api/auth/login", {
+        fetch("http://localhost:5000/api/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
