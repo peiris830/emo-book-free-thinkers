@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const jwt = require("jsonwebtoken");
 
 exports.getAllUsers = async (req, res) => {
     try {
@@ -63,6 +64,12 @@ exports.deleteUserById = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
+};
+
+const catchAsync = (fn) => {
+    return (req, res, next) => {
+        fn(req, res, next).catch(next);
+    };
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
