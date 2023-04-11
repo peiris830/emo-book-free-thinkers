@@ -14,7 +14,7 @@ const connectDB = async () => {
 
         console.log(`MongoDB Connected: ${conn.connection.host}`);*/
         const client = await mongodb.MongoClient.connect(process.env.MONGO_URI)
-            .then(() => console.log('MongoDB Connected'));
+            /*.then(() => console.log('MongoDB Connected'));*/
     } catch (error) {
         console.error(error);
         process.exit(1);

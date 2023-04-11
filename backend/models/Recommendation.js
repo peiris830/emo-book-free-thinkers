@@ -1,10 +1,29 @@
 const mongoose = require("mongoose");
+const {Schema} = require("mongoose");
 const recommendationSchema = new Schema({
     emotion: {
         type: String,
         required: true,
     },
     books: [
+        {
+            title: {
+                type: String,
+                required: true,
+            },
+            author: {
+                type: String,
+                required: true,
+            },
+            summary: {
+                type: String,
+                required: true,
+            },
+            image: {
+                type: String,
+                required: true,
+            },
+        },
         {
             title: {
                 type: String,
