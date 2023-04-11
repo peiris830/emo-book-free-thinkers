@@ -1,73 +1,274 @@
-<!DOCTYPE html>
+<!-- /* new code */  -->
+
+<!DOCTYPE html>  
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EmoBook</title>
+
     <style>
-      /* global styles */
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Open Sans', sans-serif;
+        }
 
-      nav {
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-      }
+        body{
+          height: 100vh;
+          background-color: #000;
+           background-size: cover;
+          background-position: center;
+      
+        }
 
-      nav ul {
-        list-style: none;
-        display: flex;
-      }
+        li{
+          list-style: none;
 
-      nav ul li {
-        margin-right: 20px;
-      }
+        }
 
-      nav ul li a {
-        color: #fff;
-        text-decoration: none;
-      }
+        a{
+          text-decoration: none; 
+          color:#fff;
+          font-size: 1rem;
 
-      /* page-specific styles */
-      main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 90vh;
-        background-color: #f0f0f0;
-      }
+        }
 
-      h1 {
-        font-size: 48px;
-        text-align: center;
-        margin-bottom: 40px;
-      }
+    
+
+        a:hover{
+          color: orange;
+        }
+
+        /* header */
+
+        header{
+          position: relative;
+          padding: 0 2rem;
+        }
+
+        .navbar{
+          width: 100%;
+          height: 60px;
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+
+        .navbar .logo a{
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .navbar .list_el{
+          display: flex;
+          gap:5rem;
+
+        }
+
+        .navbar .toggleButton{
+          color: #fff;
+          font-size: 1.5rem;
+          cursor: pointer;
+          display: none;
+        }
+
+        .Button{
+          background-color: orange;
+          color: #fff;
+          padding: 0.5rem 1rem;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: scale 0.2 ease ;
+        }
+
+        .Button:hover{
+          scale: 1.05;
+          color: #fff;
+
+        }
+
+        .Button:active{
+          scale: 0.95;
+        }
+
+        /* drop down*/
+
+        .dropdown_menu{
+
+          position: absolute;
+          right: 2rem;
+          top: 60px;
+          width: 300px;
+          height: 0;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(15px);
+          border-radius: 10px;
+          overflow: hidden;
+          transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        }
+
+        .dropdown_menu li {
+          padding: 0.7rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+        }
+
+        .dropdown_menu.open{
+          height: 240px;
+        }
+
+        .dropdown_menu .Button{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        section#hero{
+          height: calc(100vh - 90px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+         
+        }
+
+        #hero h1{
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+      
+        @media(max-width:992px ){
+          .navbar .list_el,
+          .navbar .Button {
+            display: none;
+          }
+
+          .navbar .toggleButton{
+            display: block;
+          }
+          .dropdown_menu{
+            display: block;
+          }
+
+        @media(max-width:576px ){
+          .dropdown_menu{
+            left: 2rem ;
+            width: unset;
+
+          }
+        }
+
+      
+
+        }
+
+
+    
+      
     </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Emo-Book </title>
+
+
   </head>
+
+
   <body>
-    <nav>
-      <h1>EmoBook</h1>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1>Welcome to EmoBook</h1>
-    </main>
+      <header>
+        <div class="navbar">
+            <div class="logo"><a href="Main.html">Emo Book</a></div>
+
+            <ul class="list_el ">
+              <li><a href="Main.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="ContactPage.html">Contact Us</a></li>
+            </ul>
+            
+            <a href="#" class="Button">Login/Signup</a>
+            <div class="toggleButton">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- <div class="dropdown_menu">
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contacts</a></li>
+          <li><a href="#" class="Button">Login/Signup</a></li>
+        </div> -->
+
+
+        <div class="dropdown_menu ">
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="ContactPage.html">Contact Us</a></li>
+          <li><a href="#" class="Button">Login/Signup</a></li>
+        </div>
+
+
+      </header>
+
+      <main>
+        <section id="hero">
+            <h1>Welcome to Emo Book </h1>
+            <p style="width: 600px; padding: 10px; border: 1px solid white; text-align:justify;"> Emo Book is an innovative project that aims to provide readers with a personalized emotional reading experience. It is an emotional based book recommendation application that suggests books based on the reader's mood and emotions. 
+
+              Emo Book utilizes advanced machine learning algorithms to analyze the user's emotional state, taking into account factors such as stress, happiness, sadness, and excitement. <br><br> Based on the user's input, the application will recommend books that align with 
+              their current emotional state,  helping them to find books that they will enjoy and connect with on a deeper level. 
+              
+              Emo Book provides a user-friendly interface that is easy to navigate, allowing users to easily browse recommended books and view details such as author information, summaries, and reviews. <br><br> Additionally, users can create their reading lists and save their favorite books for later. 
+              Overall, Emo Book is an exciting project that promises to revolutionize the way readers discover new books. With its advanced emotional-based recommendation system,  it will help readers find books that resonate with them on a deeper emotional level, ultimately leading to a more fulfilling reading experience.</p>
+        </section>
+      </main>
+
+    <script>
+      const toggleBtn = document.querySelector('.toggleButton')
+      const toggleBtnIcon = document.querySelector('.toggleButton i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick = function(){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList= isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa- Solid fa-bars'
+      
+      }
+
+    </script>
+
+
+
+
+
+
+
+    <div class="gleam">
+      
+    </div>
   </body>
 </html>
-
-
-
-
 
 
