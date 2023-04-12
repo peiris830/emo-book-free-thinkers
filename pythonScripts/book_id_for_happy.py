@@ -21,7 +21,7 @@ with open(csv_path, 'r') as csv_file:
     
     # Iterate over each row in the CSV file and extract the value from the desired column
     for row in csv_reader:
-        column_value_1 = row[0]  # Replace `0` with the index of the desired column
+        column_value_1 = row[0] 
         column_value = row[1]
         
         Book_name.append(column_value_1)
@@ -42,10 +42,19 @@ with open(csv_path, 'r') as csv_file:
 # Set the URL for the Google Books API
 url = 'https://www.googleapis.com/books/v1/volumes'
 
-for i in Book_name :
-    # Set the book title and author you want to search for
-    title = i
-    author = "vidushan"
+print("Which book do you need ?")
+print("There has only 20 books.")
+try:
+    while True:
+        x = int(input('Enter the index :- '))
+        if x != 0:
+            x = x-1
+            break
+        else:
+            continue
+        # Set the book title and author you want to search for
+    title = Book_name[x]
+    author = Author_name[x]
 
     # Set the parameters for the API request
     params = {'q': f'intitle:{title}+inauthor:{author}'}
@@ -57,6 +66,14 @@ for i in Book_name :
     # Extract the book ID from the JSON response
     book_id = json_response['items'][0]['id']
 
-    # Print the book ID
+    # Print the book & ID
+    print('Book name :',Book_name[x])
+    print('Author name :',Author_name[x])
     print('Book ID:', book_id)
+
+except:
+    print('invalid input')
+
+
+
     
