@@ -1,8 +1,7 @@
 import React from "react";
 import "../../../style.css";
-
-
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "../components/Header";
 
 function ContactPage() {
     return (
@@ -13,8 +12,8 @@ function ContactPage() {
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,400&display=swap" rel="stylesheet" />
         </head>
         <body>
-        <header>
-            <div className="navbar">
+            <Header />
+            {/*<div className="navbar">
                 <div className="logo">
                     <a href="../../../Main.html">Emo Book</a>
                 </div>
@@ -52,9 +51,7 @@ function ContactPage() {
                         Login/Signup
                     </a>
                 </li>
-            </div>
-        </header>
-
+            </div>*/}
         <div className="container">
             <h1>
                 Connect With Us <br /> <br />
