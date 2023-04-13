@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import RegisterPage from "../pages/register";
 
 function Header() {
   return (
@@ -25,7 +26,13 @@ function Header() {
                       </Routes>
                   </BrowserRouter>
               </ul>
-              <a href="/register" className="Button">Login/Signup</a>
+              <BrowserRouter>
+              {/*<a href="/register" className="Button">Login/Signup</a>*/}
+                  <Routes>
+                        <Route path="/register" element={<RegisterPage />} />
+                    </Routes>
+              </BrowserRouter>
+
               <div className="toggleButton">
                   <i className="fa-solid fa-bars"/>
               </div>

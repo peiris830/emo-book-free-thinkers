@@ -1,7 +1,6 @@
 import React from 'react';
 
-const MyClass = React.createClass({
-    render: function () {
+function AboutPage() {
         return (
             <div>
                 <meta charSet="UTF-8"/>
@@ -43,5 +42,6 @@ const MyClass = React.createClass({
                 </div>
             </div>
         );
-    }
-});
+}
+
+export default AboutPage;
