@@ -1,5 +1,6 @@
-var MyClass = React.createClass({
-    render: function() {
+import Header from "../components/Header";
+
+function MainPage() {
         return (
             <div>
                 {/* /* new code * /  */}
@@ -10,32 +11,7 @@ var MyClass = React.createClass({
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
                 <link rel="stylesheet" href="style.css" />
                 <title>Emo-Book </title>
-                <header>
-                    <div className="navbar">
-                        <div className="logo"><a href="Main.html">Emo Book</a></div>
-                        <ul className="list_el ">
-                            <li><a href="Main.html">Home</a></li>
-                            <li><a href="About.html">About</a></li>
-                            <li><a href="ContactPage.html">Contact Us</a></li>
-                        </ul>
-                        <a href="register.html" className="Button">Login/Signup</a>
-                        <div className="toggleButton">
-                            <i className="fa-solid fa-bars" />
-                        </div>
-                    </div>
-                    {/* <div class="dropdown_menu">
-          <li><a href="Main.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Contact.html">Contacts</a></li>
-          <li><a href="#" class="Button">Login/Signup</a></li>
-        </div> */}
-                    <div className="dropdown_menu ">
-                        <li><a href="Main.html">Home</a></li>
-                        <li><a href="About.html">About</a></li>
-                        <li><a href="ContactPage.html">Contact Us</a></li>
-                        <li><a href="register.html" className="Button">Login/Signup</a></li>
-                    </div>
-                </header>
+                <Header />
                 <main>
                     <section id="hero">
                         <h1>Welcome to Emo Book </h1>
@@ -50,5 +26,6 @@ var MyClass = React.createClass({
                 </div>
             </div>
         );
-    }
-});
+}
+
+export default MainPage;

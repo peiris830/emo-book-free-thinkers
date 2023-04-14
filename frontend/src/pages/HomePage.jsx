@@ -9,7 +9,7 @@ function HomePage() {
         <h1>  <main>
             <section id="hero">
                 <h1>Welcome to Emo Book </h1>
-                <p style="width: 600px; padding: 10px; border: 1px solid white; text-align:justify;"> Emo Book is an innovative project that aims to provide readers with a personalized emotional reading experience. It is an emotional based book recommendation application that suggests books based on the reader's mood and emotions.
+                <p style={{ width: '600px', padding: '10px', border: '1px solid white', textAlign: 'justify' }}> Emo Book is an innovative project that aims to provide readers with a personalized emotional reading experience. It is an emotional based book recommendation application that suggests books based on the reader's mood and emotions.
 
                     Emo Book utilizes advanced machine learning algorithms to analyze the user's emotional state, taking into account factors such as stress, happiness, sadness, and excitement. Based on the user's input, the application will recommend books that align with
                         their current emotional state,  helping them to find books that they will enjoy and connect with on a deeper level.
