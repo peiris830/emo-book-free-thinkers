@@ -51,6 +51,7 @@ def process_image():
                 prediction = model.predict(img)
                 emotion_labels = ['Happy', 'Angry', 'Fear', 'Sad']
                 emotion = emotion_labels[np.argmax(prediction)]
+                return emotion
             else:
                 break
 
