@@ -4,7 +4,15 @@ import csv
 import numpy as np
 
 # Set the path to your CSV file
-csv_path = 'D:\sdgp\dataset\data_set\happydata.csv'
+
+if mood == "Happy":
+    csv_path = 'D:\sdgp\dataset\data_set\happydata.csv'
+elif mood == "Sad":
+    csv_path = 'D:\sdgp\dataset\data_set\sad.csv'
+elif mood == "Anger":
+    csv_path = 'D:\sdgp\dataset\data_set/anger.csv'
+else:
+    csv_path = 'D:\sdgp\dataset\data_set\joyful.csv'
 
 
 # Open the CSV file using the built-in `open()` function
