@@ -6,23 +6,23 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import LoginPage from "./pages/Login";
+import RegisterPage from "./pages/Register";
+import UserPage from "./pages/User";
 
 function App() {
   return (
       <div>
-        <Header />
-
-        <main>
             <BrowserRouter>
                 <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                    <Route path="/user" element={<UserPage />} />
                 </Routes>
             </BrowserRouter>
-        </main>
-
-        <Footer />
       </div>
   );
 }

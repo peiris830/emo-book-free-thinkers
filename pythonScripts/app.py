@@ -1,42 +1,53 @@
+import io
+
+import numpy as np
+import pandas as pd
 import tensorflow as tf
+from PIL import Image
 from tensorflow import keras
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+# Load VGG16 model and pre-trained weights
+model = tf.keras.load_model('keras_model.h5')
 
-@app.route('/edit/<string:name>', methods=['GET'])
-def getEmotionList(name):
-    # load the pre-trained model
-    model = keras.models.load_model('keras_model.h5')
-    # define the class labels
-    class_labels = ['Happy', 'Angry', 'Fear', 'Sad']
-    img_array_list = []
-    img_name_list = []
 
-    for i in range(1, 20):
-        # num_displayed = 0
-        img = keras.preprocessing.image.load_img(f'images/{i}.png', target_size=(224, 224))
-        img_array = keras.preprocessing.image.img_to_array(img)
-        img_array = tf.expand_dims(img_array, 0)
-        img_array = keras.applications.mobilenet_v2.preprocess_input(img_array)
+# Load book features and build nearest neighbors model
+# books_df = pd.read_csv('books.csv')
+# book_features = np.array(books_df.iloc[:, 1:])
+# nn = NearestNeighbors(n_neighbors=5, algorithm='brute', metric='cosine')
+# nn.fit(book_features)
 
-        # make predictions on the test image
-        predictions = model.predict(img_array)
-        predicted_class = class_labels[tf.argmax(predictions, axis=1)[0]]
-        # img_name_list.append(f'{i}.jpg')
 
-        if predicted_class == "Happy":
-            print(predicted_class)
-            img_name_list.append(f'{i}.jpg')
-        elif predicted_class == "Angry":
-            print(predicted_class)
-            img_name_list.append(f'{i}.jpg')
-        elif predicted_class == "Fear":
-            print(predicted_class)
-            img_name_list.append(f'{i}.jpg')
+@app.route('/process-image', methods=['POST'])
+def process_image():
+    # Get the image file from the HTTP POST request
+    file = request.files['image']
 
-    return jsonify({'img_name_list': img_name_list})
+    # Load the image file using PIL
+    img = Image.open(io.BytesIO(file.read()))
+
+    # Convert the image to a NumPy array and preprocess it for VGG16
+    # img = img_to_array(img)
+    # img = np.expand_dims(img, axis=0)
+    # img = preprocess_input(img)
+    #
+    # # Use VGG16 to extract features from the image
+    # features = model.predict(img).flatten()
+    #
+    # # Use nearest neighbors to find the most similar books
+    # distances, indices = nn.kneighbors([features])
+    # recommended_books = []
+    # for index in indices[0]:
+    #     recommended_books.append({
+    #         'title': books_df.iloc[index, 0],
+    #         'author': books_df.iloc[index, -1],
+    #         'image_url': books_df.iloc[index, -2]
+    #     })
+    #
+    # # Return the recommended books as a JSON response
+    # return jsonify({'recommended_books': recommended_books})
 
 
 if __name__ == '__main__':

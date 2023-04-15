@@ -27,7 +27,6 @@ function LoginForm() {
                 window.location.href = "/";
             }
         });
-
     };
 
     return (

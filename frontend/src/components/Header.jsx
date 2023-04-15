@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
@@ -18,20 +18,19 @@ function Header() {
           <div className="navbar">
               <div className="logo"><a href="/">Emo Book</a></div>
               <ul className="list_el ">
-                  <BrowserRouter>
+                  {/*<BrowserRouter>
                       <Routes>
                           <Route path="/" element={<HomePage />} />
                           <Route path="/about" element={<AboutPage />} />
                           <Route path="/contact" element={<ContactPage />} />
                       </Routes>
-                  </BrowserRouter>
+                  </BrowserRouter>*/}
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/contact">Contact Us</Link></li>
               </ul>
-              <BrowserRouter>
               {/*<a href="/register" className="Button">Login/Signup</a>*/}
-                  <Routes>
-                        <Route path="/register" element={<RegisterPage />} />
-                    </Routes>
-              </BrowserRouter>
+              <Link to="/register" className="Button">Login/Signup</Link>
 
               <div className="toggleButton">
                   <i className="fa-solid fa-bars"/>
