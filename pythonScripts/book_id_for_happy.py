@@ -1,8 +1,7 @@
 import random
 import requests
-import json
 import csv
-import numpy as np
+
 
 # Set the path to your CSV file
 
@@ -36,17 +35,6 @@ with open(csv_path, 'r') as csv_file:
         Book_name.append(column_value_1)
         Author_name.append(column_value)
 
-        #concat_array = np.concatenate((Book_name, Author_name))
-
-
-    
-    # If you want to Print the list of books name this is the code
-    #print(np.Book_name)
-
-    # If you want to Print the list of author name this is the code
-    #print(np.Author_name)
-
-    #print(concat_array)
 
 # Set the URL for the Google Books API
 url = 'https://www.googleapis.com/books/v1/volumes'
