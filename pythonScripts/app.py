@@ -1,16 +1,17 @@
 import io
-
+import cv2
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 from PIL import Image
+from keras.utils import img_to_array
 from tensorflow import keras
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Load VGG16 model and pre-trained weights
-model = tf.keras.load_model('keras_model.h5')
+# with tf.keras.utils.custom_object_scope({'CohenKappa': keras.metrics.CohenKappa}):
+model = tf.keras.models.load_model('keras_model.h5')
 
 
 # Load book features and build nearest neighbors model
@@ -22,17 +23,41 @@ model = tf.keras.load_model('keras_model.h5')
 
 @app.route('/process-image', methods=['POST'])
 def process_image():
-    # Get the image file from the HTTP POST request
-    file = request.files['image']
+    cap = cv2.VideoCapture(0)
 
-    # Load the image file using PIL
-    img = Image.open(io.BytesIO(file.read()))
+    # Check if the camera was opened successfully
+    if not cap.isOpened():
+        print("Error opening video stream or file")
 
-    # Convert the image to a NumPy array and preprocess it for VGG16
-    # img = img_to_array(img)
-    # img = np.expand_dims(img, axis=0)
-    # img = preprocess_input(img)
-    #
+    # Read until the video is completed or the user quits
+    while cap.isOpened():
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+        if ret:
+            # Display the resulting frame
+            cv2.imshow('Frame', frame)
+            # Press 'q' to quit
+            if cv2.waitKey(25) & 0xFF == ord('q'):
+                break
+            elif cv2.waitKey(25) & 0xFF == ord('s'):
+                img = cv2.resize(frame, (224, 224))
+                # converts to greyscale
+                img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                # turns the output into an array
+                img = img_to_array(img)
+                img = np.expand_dims(img, axis=0)
+                img = img / 255.0
+
+                prediction = model.predict(img)
+                emotion_labels = ['Happy', 'Angry', 'Fear', 'Sad']
+                emotion = emotion_labels[np.argmax(prediction)]
+            else:
+                break
+
+    # Release the camera and destroy all windows
+    cap.release()
+    cv2.destroyAllWindows()
+
     # # Use VGG16 to extract features from the image
     # features = model.predict(img).flatten()
     #
@@ -52,3 +77,4 @@ def process_image():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
