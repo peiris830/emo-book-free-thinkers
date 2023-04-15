@@ -23,9 +23,9 @@ const CaptureImgBtn = () => {
         axios.post('http://localhost:5000/api/process-image')
             .then(response => {
                 setEmotion(response.data.emotion);
-                axios.post('/api/recommend-books', { emotion: response.data.emotion })
+                /*axios.post('/api/recommend-books', { emotion: response.data.emotion })
                     .then(response => setBooks(response.data.books))
-                    .catch(error => console.log(error));
+                    .catch(error => console.log(error));*/
             })
             .catch(error => console.log(error));
     }
