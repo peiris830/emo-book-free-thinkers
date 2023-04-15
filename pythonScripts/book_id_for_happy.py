@@ -1,3 +1,4 @@
+import random
 import requests
 import json
 import csv
@@ -50,37 +51,28 @@ with open(csv_path, 'r') as csv_file:
 # Set the URL for the Google Books API
 url = 'https://www.googleapis.com/books/v1/volumes'
 
-print("Which book do you need ?")
-print("There has only 20 books.")
-try:
-    while True:
-        x = int(input('Enter the index :- '))
-        if x != 0:
-            x = x-1
-            break
-        else:
-            continue
-        # Set the book title and author you want to search for
-    title = Book_name[x]
-    author = Author_name[x]
 
-    # Set the parameters for the API request
-    params = {'q': f'intitle:{title}+inauthor:{author}'}
 
-    # Send the API request and retrieve the JSON response
-    response = requests.get(url, params=params)
-    json_response = response.json()
+random_index = random.randint(0,len(Book_name)-1)
+    
+title = Book_name[random_index]
+author = Author_name[random_index]
 
-    # Extract the book ID from the JSON response
-    book_id = json_response['items'][0]['id']
+# Set the parameters for the API request
+params = {'q': f'intitle:{title}+inauthor:{author}'}
 
-    # Print the book & ID
-    print('Book name :',Book_name[x])
-    print('Author name :',Author_name[x])
-    print('Book ID:', book_id)
+# Send the API request and retrieve the JSON response
+response = requests.get(url, params=params)
+json_response = response.json()
 
-except:
-    print('invalid input')
+# Extract the book ID from the JSON response
+book_id = json_response['items'][0]['id']
+
+# Print the book & ID
+print('Book name :',Book_name[random_index])
+print('Author name :',Author_name[random_index])
+print('Book ID:', book_id)
+
 
 
 
