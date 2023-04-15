@@ -4,7 +4,7 @@ import csv
 import numpy as np
 
 # Set the path to your CSV file
-csv_path = 'D:\sdgp\dataset\data_set\sad.csv'
+csv_path = 'D:\sdgp\dataset\data_set\happydata.csv'
 
 
 # Open the CSV file using the built-in `open()` function
@@ -21,7 +21,7 @@ with open(csv_path, 'r') as csv_file:
     
     # Iterate over each row in the CSV file and extract the value from the desired column
     for row in csv_reader:
-        column_value_1 = row[0] 
+        column_value_1 = row[0]  # Replace `0` with the index of the desired column
         column_value = row[1]
         
         Book_name.append(column_value_1)
