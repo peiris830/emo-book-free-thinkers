@@ -19,7 +19,7 @@ function UserPage() {
                         <div className="row">
                             <div className="col-md-6">
                                 <h2>Welcome to your EmoBook profile!</h2>
-                                <h5>Instructions to get your book reccomendations!!!</h5>
+                                <h5>Instructions to get your book recommendations!!!</h5>
                                 <h6>
                                     1. Once the user has given permission for the browser to access the device camera, they can position their face within the camera's viewfinder and take a scan of their face. The web application will provide instructions on how to capture the facial expression associated with the user's current emotional state. <br /> <br />
                                     2. Using facial recognition technology, the application will analyze the user's facial expression and determine their current emotional state. <br /><br />

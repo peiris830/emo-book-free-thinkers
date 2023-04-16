@@ -30,6 +30,8 @@ const userSchema = new Schema({
     resetTokenExpiration: Date,
 });
 
+userSchema.plugin(require('passport-local-mongoose'));
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

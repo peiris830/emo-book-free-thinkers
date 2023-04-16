@@ -52,7 +52,8 @@ function RegisterPage() {
                                     </div>
                                     <div className="form-row">
                                         <div className="column-len7">
-                                            <button type="submit" className="btn1 mt-3 mb-5">Create Account</button>
+                                            <button type="submit" className="btn1 mt-3 mb-5">
+                                                <Link to="/user">Create Account</Link></button>
                                         </div>
                                     </div>
                                 </form>

@@ -1,5 +1,5 @@
 async function createUser(user) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('http://localhost:3001/api/users', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(user)
@@ -14,7 +14,7 @@ async function createUser(user) {
 }
 
 async function updateUser(user) {
-    const response = await fetch(`/api/users/${user.id}`, {
+    const response = await fetch(`http://localhost:3001/api/users/${user.id}`, {
         method: 'PUT',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(user)
