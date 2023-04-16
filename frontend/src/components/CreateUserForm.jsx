@@ -26,23 +26,33 @@ function CreateUserForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={event => setName(event.target.value)} />
-            </label>
-            <label>
-                Phone:
-                <input type="text" value={phone} onChange={event => setPhone(event.target.value)} />
-            </label>
-            <label>
-                Email:
-                <input type="text" value={email} onChange={event => setEmail(event.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
-            </label>
+            <div className="form-row">
+                <div className="column-len7">
+                <input type="text" className="form-control my-3 p-4" placeholder="Full Name"
+                       value={name} onChange={event => setName(event.target.value)} />
+                </div>
+            </div>
+            <div className="form-row">
+                <div className="column-len7">
+            <input type="text" className="form-control my-3 p-4" placeholder="Phone"
+                   value={phone} onChange={event => setPhone(event.target.value)} />
+                </div>
+            </div>
+            <div className="form-row">
+                <div className="column-len7">
+            <input type="text" className="form-control my-3 p-4" placeholder="Email"
+                   value={email} onChange={event => setEmail(event.target.value)} />
+                </div>
+            </div>
+            <div className="form-row">
+                <div className="column-len7">
+            <input type="password" className="form-control my-3 p-4" placeholder="Create a Password"
+                   value={password} onChange={event => setPassword(event.target.value)} />
+                </div>
+            </div>
             <button type="submit">Create User</button>
         </form>
     );
 }
+
+export default CreateUserForm;

@@ -55,8 +55,8 @@ function RegisterPage() {
                                             <button type="submit" className="btn1 mt-3 mb-5">Create Account</button>
                                         </div>
                                     </div>
-                                    <p>Already have an account? <Link to="/Login">Sign in here</Link></p>
                                 </form>
+                                <p>Already have an account? <Link to="/Login">Sign in here</Link></p>
                             </div>
                         </div>
                     </div>
