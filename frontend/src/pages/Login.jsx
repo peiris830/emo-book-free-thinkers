@@ -36,11 +36,9 @@ function LoginPage() {
                                         {/*<div className="column-len7">
                                             <a href="landing page.html"><button type="button" className="btn1 mt-3 mb-5">Login</button></a>
                                         </div>*/}
-                                        <BrowserRouter>
-                                            <Link to="/User">
-                                                <button type="button" className="btn1 mt-3 mb-5">Login</button>
-                                            </Link>
-                                        </BrowserRouter>
+                                        <Link to="/User">
+                                            <button type="button" className="btn1 mt-3 mb-5">Login</button>
+                                        </Link>
                                     </div>
                                     <p>Don't have an account, register here! <Link to="/Register">Register Here </Link></p>
                                 </form>

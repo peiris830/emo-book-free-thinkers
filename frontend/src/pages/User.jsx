@@ -1,5 +1,5 @@
 import React from 'react';
-import CaptureImgBtn from "../utils/CaptureImgBtn";
+import CaptureImgBtn from "../components/CaptureImgBtn";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Header from "../components/Header";
 

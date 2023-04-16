@@ -71,7 +71,7 @@ button{
     height: 35px;
     border-radius: 30px;
     margin-top: 20px;
-    box-shadow: 0px 5px 15px 0 px rgba(28,0,181,0.3);
+    box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
 }
 .contact-left h3{
     color: orange;
@@ -166,7 +166,7 @@ tr td{
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale 0.2 ease ;
+    transition: transform 0.2s ease ;
   }
 
   .Button:hover{

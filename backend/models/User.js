@@ -6,6 +6,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    phone: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true
@@ -24,7 +28,6 @@ const userSchema = new Schema({
     },
     resetToken: String,
     resetTokenExpiration: Date,
-
 });
 
 const User = mongoose.model('User', userSchema);

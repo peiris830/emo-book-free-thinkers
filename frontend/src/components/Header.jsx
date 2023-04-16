@@ -1,9 +1,7 @@
 import React from "react";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
-import RegisterPage from "../pages/Register";
+import '../styles/HeaderStyles.css';
+
 
 function Header() {
   return (

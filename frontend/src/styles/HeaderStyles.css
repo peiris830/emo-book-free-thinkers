@@ -1,0 +1,131 @@
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .list_el{
+    display: flex;
+    gap:5rem;
+
+}
+
+.navbar .toggleButton{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.Button{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease ;
+}
+
+.Button:hover{
+    scale: 1.05;
+    color: #fff;
+
+}
+
+.Button:active{
+    scale: 0.95;
+}
+
+/* drop down*/
+
+.dropdown_menu{
+
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu .Button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section#hero{
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+@media(max-width:992px ){
+    .navbar .list_el,
+    .navbar .Button {
+        display: none;
+    }
+
+    .navbar .toggleButton{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+
+    @media(max-width:576px ){
+        .dropdown_menu{
+            left: 2rem ;
+            width: unset;
+
+        }
+    }
+}

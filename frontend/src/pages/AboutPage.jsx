@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from "../components/Header";
 
 function AboutPage() {
         return (
@@ -10,9 +11,7 @@ function AboutPage() {
                 <link rel="stylesheet" href="aboutStyle.css"/>
                 <style
                     dangerouslySetInnerHTML={{__html: "\n        body {\n            background-color: black;\n            color: #FFFFFF;\n            font-family: Arial, sans-serif;\n            text-align: center;\n      }\n    "}}/>
-                <header>
-
-                </header>
+                <Header/>
                 <div className="description">
                     <h1>About Free Thinkers</h1>
                     <br/>

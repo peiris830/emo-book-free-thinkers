@@ -25,6 +25,7 @@ exports.getUserById = async (req, res) => {
 exports.createUser = async (req, res) => {
     const user = new User({
         name: req.body.name,
+        phone: req.body.phone,
         email: req.body.email,
         password: req.body.password
     });
