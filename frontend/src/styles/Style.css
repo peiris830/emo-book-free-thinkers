@@ -223,7 +223,6 @@ section#hero{
   justify-content: center;
   text-align: center;
   color: white;
-  
 }
 
 #hero h1{
@@ -231,7 +230,6 @@ section#hero{
   margin-bottom: 1rem;
   font-weight: bold;
 }
-
 
 @media(max-width:992px ){
   .navbar .list_el,
@@ -253,7 +251,4 @@ section#hero{
 
   }
 }
-
-
-
 }
