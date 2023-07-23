@@ -90,14 +90,17 @@ header{
     background: orange;
     color: black;
 }
+
 h1{
     color: white;
     margin-bottom: 12px;
     text-decoration: solid;
 }
+
 .container p{
     margin-bottom: 10px;
 }
+
 .input-row{
     display: flex;
     justify-content: space-between;
@@ -106,6 +109,7 @@ h1{
 .input-row .input-group{
     flex-basis: 45%;
 }
+
 input{
     width: 100%;
     border: none;
@@ -113,6 +117,7 @@ input{
     outline: none;
     padding-bottom: 5px;
 }
+
 textarea{
     width: 100%;
     border: 1px solid #ccc;
@@ -120,11 +125,13 @@ textarea{
     padding: 10px;
     box-sizing: border-box;
 }
+
 label{
     margin-bottom: 6px;
     display: block;
     color: orange;
 }
+
 button{
     background: orange;
     width: 100px;
@@ -136,19 +143,23 @@ button{
     margin-top: 19px;
     box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
 }
+
 .contact-left h3{
     color: #ffaa0d;
     font-weight: 610;
     margin-bottom: 29px;
 }
+
 .contact-right h3{
     color: black;
     font-weight: 610;
     margin-bottom: 30px;
 }
+
 tr td:first-child{
     padding-right: 20px;
 }
+
 tr td{
     padding-top: 20px;
     text-decoration: solid;
@@ -169,8 +180,6 @@ a{
 a:hover{
   color: orange;
 }
-
-
 
 /* drop down*/
 
