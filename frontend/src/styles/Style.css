@@ -9,7 +9,7 @@ body {
 	font-size: 14px;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  background-color: #000;
+  background-color: black;
   background-size: cover;
 }
 .container{
@@ -17,7 +17,7 @@ body {
     margin: 49px auto;
 }
 .contact-box{
-    background: #fff;
+    background: white;
     display: flex;
 }
 .contact-left{
@@ -79,7 +79,7 @@ button{
 .contact-left h3{
     color: #ffaa0d;
     font-weight: 610;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
 }
 .contact-right h3{
     color: black;
