@@ -92,7 +92,7 @@ tr td:first-child{
 tr td{
     padding-top: 20px;
     text-decoration: solid;
-    text-shadow: #000;
+    text-shadow: black;
     font-weight: bolder;
 }
 
