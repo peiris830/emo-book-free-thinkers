@@ -22,7 +22,6 @@ header{
 .navbar .list_el{
     display: flex;
     gap:5rem;
-
 }
 
 .navbar .toggleButton{
